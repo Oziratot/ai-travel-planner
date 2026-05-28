@@ -24,4 +24,4 @@ def db_check() -> dict[str, str]:
             "pgvector": vector_version or "not installed",
         }
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"db error: {type(e).__name__}: {e}")
+        raise HTTPException(status_code=500, detail=f"db error: {type(e).__name__}: {e}") from e
